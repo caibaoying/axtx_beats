@@ -1,0 +1,7 @@
+/.idea
+/build
+
+.DS_Store
+/axtx_beats
+/axtx_beats.test
+*.pyc

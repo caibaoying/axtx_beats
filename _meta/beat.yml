@@ -1,0 +1,7 @@
+################### Axtx_beats Configuration Example #########################
+
+############################# Axtx_beats ######################################
+
+axtx_beats:
+  # Defines how often an event is sent to the output
+  period: 1s
