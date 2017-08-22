@@ -36,6 +36,7 @@ type MapStr map[string]interface{}
 // Update copies all the key-value pairs from d to this map. If the key
 // already exists then it is overwritten. This method does not merge nested
 // maps.
+// copy
 func (m MapStr) Update(d MapStr) {
 	for k, v := range d {
 		m[k] = v
@@ -43,6 +44,7 @@ func (m MapStr) Update(d MapStr) {
 }
 
 // Delete deletes the given key from the map.
+// shan chu
 func (m MapStr) Delete(key string) error {
 	_, err := walkMap(key, m, opDelete)
 	return err
@@ -51,6 +53,8 @@ func (m MapStr) Delete(key string) error {
 // CopyFieldsTo copies the field specified by key to the given map. It will
 // overwrite the key if it exists. An error is returned if the key does not
 // exist in the source map.
+
+// copy
 func (m MapStr) CopyFieldsTo(to MapStr, key string) error {
 	v, err := walkMap(key, m, opGet)
 	if err != nil {

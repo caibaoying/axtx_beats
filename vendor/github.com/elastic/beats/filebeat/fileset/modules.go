@@ -86,6 +86,7 @@ func newModuleRegistry(modulesPath string,
 
 // NewModuleRegistry reads and loads the configured module into the registry.
 func NewModuleRegistry(moduleConfigs []*common.Config, beatVersion string) (*ModuleRegistry, error) {
+
 	modulesPath := paths.Resolve(paths.Home, "module")
 
 	stat, err := os.Stat(modulesPath)
@@ -242,6 +243,7 @@ func (reg *ModuleRegistry) GetProspectorConfigs() ([]*common.Config, error) {
 			result = append(result, fcfg)
 		}
 	}
+	fmt.Println("result:", result)
 	return result, nil
 }
 

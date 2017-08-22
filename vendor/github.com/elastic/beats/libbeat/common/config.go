@@ -12,10 +12,10 @@ import (
 
 	"github.com/elastic/beats/libbeat/common/file"
 	"github.com/elastic/beats/libbeat/logp"
-	"github.com/elastic/go-ucfg"
-	"github.com/elastic/go-ucfg/cfgutil"
 	cfgflag "github.com/elastic/go-ucfg/flag"
 	"github.com/elastic/go-ucfg/yaml"
+	"github.com/elastic/go-ucfg"
+	"github.com/elastic/go-ucfg/cfgutil"
 )
 
 var flagStrictPerms = flag.Bool("strict.perms", true, "Strict permission checking on config files")
@@ -190,6 +190,7 @@ func (c *Config) Merge(from interface{}) error {
 }
 
 func (c *Config) Unpack(to interface{}) error {
+	// println(c.Enabled())
 	return c.access().Unpack(to, configOpts...)
 }
 

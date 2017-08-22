@@ -57,6 +57,7 @@ func mustNewConfigFrom(from interface{}) *common.Config {
 // ChangeDefaultCfgfileFlag replaces the value and default value for the `-c`
 // flag so that it reflects the beat name.
 func ChangeDefaultCfgfileFlag(beatName string) error {
+	//configfiles.SetDefault(beatName + ".yml")
 	configfiles.SetDefault(beatName + ".yml")
 	return nil
 }

@@ -156,7 +156,7 @@ func newBeat(name, version string) *Beat {
 
 func (b *Beat) launch(bt Creator) error {
 	err := b.handleFlags()
-	if err != nil {
+ 	if err != nil {
 		return err
 	}
 
@@ -230,12 +230,15 @@ func (b *Beat) launch(bt Creator) error {
 func (b *Beat) handleFlags() error {
 	// Due to a dependence upon the beat name, the default config file path
 	// must be updated prior to CLI flag handling.
+	//err := cfgfile.ChangeDefaultCfgfileFlag(b.Name)
 	err := cfgfile.ChangeDefaultCfgfileFlag(b.Name)
 	if err != nil {
 		return fmt.Errorf("failed to set default config file path: %v", err)
 	}
+	// jie xi can shu
 	flag.Parse()
 
+	// *P jie yin yong
 	if *printVersion {
 		fmt.Printf("%s version %s (%s), libbeat %s\n",
 			b.Name, b.Version, runtime.GOARCH, defaultBeatVersion)

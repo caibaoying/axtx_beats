@@ -105,7 +105,7 @@ var VarExp Option = doVarExp
 
 func doVarExp(o *options) { o.varexp = true }
 
-func makeOptions(opts []Option) *options {
+ 	func makeOptions(opts []Option) *options {
 	o := options{
 		tag:          "config",
 		validatorTag: "validate",

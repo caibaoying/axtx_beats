@@ -37,6 +37,7 @@ type Path struct {
 // Currently existing file types are: Home, Config, Data
 type FileType string
 
+// mei ju
 const (
 	Home   FileType = "home"
 	Config FileType = "config"
