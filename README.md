@@ -1,3 +1,5 @@
+# yml 文件一定要注意缩进，每一级缩进两个空格，不可多，不可少。就很皮
+
 # Axtx_beats
 
 Welcome to Axtx_beats.
